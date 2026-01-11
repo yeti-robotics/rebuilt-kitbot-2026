@@ -49,9 +49,7 @@ public class RobotContainer {
      */
     private void configureBindings() {
         primary.leftTrigger().whileTrue(intake.setVoltage(10));
-    }
-    private void configureBindings() {
-        primary.rightBumper().whileTrue(shooter.launchShooter(10.6));
+        primary.rightTrigger().whileTrue(shooter.launchShooter(10.6));
     }
 
     /**
