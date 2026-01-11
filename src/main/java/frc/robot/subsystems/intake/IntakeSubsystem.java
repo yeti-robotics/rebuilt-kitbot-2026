@@ -12,7 +12,8 @@ public class IntakeSubsystem extends SubsystemBase {
 
     public IntakeSubsystem() {
         intakeRoller = new SparkMax(IntakeConfigs.intakeMotorID, SparkLowLevel.MotorType.kBrushed);
-        intakeRoller.configure(IntakeConfigs.feederConfig, ResetMode.kResetSafeParameters, PersistMode.kPersistParameters);
+        intakeRoller.configure(
+                IntakeConfigs.feederConfig, ResetMode.kResetSafeParameters, PersistMode.kPersistParameters);
     }
 
     public Command setVoltage(double voltage) {
@@ -22,11 +23,6 @@ public class IntakeSubsystem extends SubsystemBase {
                 },
                 () -> {
                     intakeRoller.setVoltage(0);
-                }
-        );
-
+                });
     }
-
 }
-
-

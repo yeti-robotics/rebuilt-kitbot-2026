@@ -7,10 +7,5 @@ public class IntakeConfigs {
     static final int intakeMotorCurrentLimit = 60;
 
     static final SparkMaxConfig feederConfig =
-            (SparkMaxConfig) new SparkMaxConfig()
-                    .inverted(true)
-                    .smartCurrentLimit(intakeMotorCurrentLimit);
-
-
-
+            (SparkMaxConfig) new SparkMaxConfig().inverted(true).smartCurrentLimit(intakeMotorCurrentLimit);
 }

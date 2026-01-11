@@ -5,11 +5,12 @@
 
 package frc.robot;
 
-import edu.wpi.first.wpilibj.XboxController;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
+import frc.robot.Commands.Drive;
 import frc.robot.constants.Constants;
+import frc.robot.subsystems.drive.DriveTrain;
 import frc.robot.subsystems.intake.IntakeSubsystem;
 import frc.robot.subsystems.shooter.ShooterSubsystem;
 
@@ -20,12 +21,13 @@ import frc.robot.subsystems.shooter.ShooterSubsystem;
  * subsystems, commands, and trigger mappings) should be declared here.
  */
 public class RobotContainer {
-    //Controller
+    // Controller
     CommandXboxController primary;
 
-    //Subsystems
+    // Subsystems
     private final ShooterSubsystem shooter;
     private final IntakeSubsystem intake;
+    private final DriveTrain drive;
 
     /** The container for the robot. Contains subsystems, OI devices, and commands. */
     public RobotContainer() {
@@ -34,9 +36,8 @@ public class RobotContainer {
 
         shooter = new ShooterSubsystem();
         intake = new IntakeSubsystem();
+        drive = new DriveTrain();
     }
-
-
 
     /**
      * Use this method to define your trigger->command mappings. Triggers can be created via the
@@ -48,6 +49,8 @@ public class RobotContainer {
      * joysticks}.
      */
     private void configureBindings() {
+        drive.setDefaultCommand(new Drive(drive, primary));
+
         primary.leftTrigger().whileTrue(intake.setVoltage(10));
         primary.rightTrigger().whileTrue(shooter.launchShooter(10.6));
     }

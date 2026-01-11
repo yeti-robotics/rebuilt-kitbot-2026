@@ -7,4 +7,7 @@ public class DriveTrainConfigs {
     public static final int RIGHT_FOLLOWER_ID = 4;
 
     public static final int DRIVE_MOTOR_CURRENT_LIMIT = 60;
+
+    public static final double DRIVE_SCALING = .7;
+    public static final double ROTATION_SCALING = .8;
 }
