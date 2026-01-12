@@ -1,5 +1,5 @@
 package frc.robot.subsystems.shooter;
-
+// shooter my beloved (i need to commit smth)
 import com.revrobotics.PersistMode;
 import com.revrobotics.ResetMode;
 import com.revrobotics.spark.SparkLowLevel.MotorType;
