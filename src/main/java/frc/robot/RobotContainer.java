@@ -32,11 +32,11 @@ public class RobotContainer {
     /** The container for the robot. Contains subsystems, OI devices, and commands. */
     public RobotContainer() {
         primary = new CommandXboxController(Constants.PRIMARY_CONTROLLER_PORT);
-        configureBindings();
 
         shooter = new ShooterSubsystem();
         intake = new IntakeSubsystem();
         drive = new DriveTrain();
+        configureBindings();
     }
 
     /**
