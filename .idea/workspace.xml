@@ -5,39 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c7ebf9f1-f7aa-495e-9deb-8d72731e11f6" name="Changes" comment="pls workkkkk">
-      <change beforePath="$PROJECT_DIR$/.idea/.github/CODEOWNERS" beforeDir="false" afterPath="$PROJECT_DIR$/.github/CODEOWNERS" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.github/pull_request_template.md" beforeDir="false" afterPath="$PROJECT_DIR$/.github/pull_request_template.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.github/workflows/build.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/build.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.wpilib/wpilib_preferences.json" beforeDir="false" afterPath="$PROJECT_DIR$/.wpilib/wpilib_preferences.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/WPILib-License.md" beforeDir="false" afterPath="$PROJECT_DIR$/WPILib-License.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/networktables.json" beforeDir="false" afterPath="$PROJECT_DIR$/networktables.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/simgui-ds.json" beforeDir="false" afterPath="$PROJECT_DIR$/simgui-ds.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/src/main/deploy/example.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/deploy/example.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/src/main/java/frc/robot/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frc/robot/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/src/main/java/frc/robot/Robot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frc/robot/Robot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/src/main/java/frc/robot/RobotContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frc/robot/RobotContainer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/src/main/java/frc/robot/constants/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frc/robot/constants/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/src/main/java/frc/robot/constants/FieldConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frc/robot/constants/FieldConstants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/src/main/java/frc/robot/subsystems/.gitkeep" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frc/robot/subsystems/.gitkeep" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/src/main/java/frc/robot/subsystems/drive/DriveTrain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frc/robot/subsystems/drive/DriveTrain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/src/main/java/frc/robot/subsystems/drive/DriveTrainConfigs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frc/robot/subsystems/drive/DriveTrainConfigs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/src/main/java/frc/robot/subsystems/intake/IntakeConfigs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frc/robot/subsystems/intake/IntakeConfigs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/src/main/java/frc/robot/subsystems/intake/IntakeSubsystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frc/robot/subsystems/intake/IntakeSubsystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/src/main/java/frc/robot/subsystems/shooter/ShooterConfigs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frc/robot/subsystems/shooter/ShooterConfigs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/src/main/java/frc/robot/subsystems/shooter/ShooterSubsystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frc/robot/subsystems/shooter/ShooterSubsystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/src/main/java/frc/robot/util/AllianceFlipUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frc/robot/util/AllianceFlipUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vendordeps/REVLib.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendordeps/REVLib.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vendordeps/WPILibNewCommands.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendordeps/WPILibNewCommands.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/frc/robot/subsystems/shooter/ShooterSubsystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frc/robot/subsystems/shooter/ShooterSubsystem.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,6 +49,10 @@
     &quot;accountId&quot;: &quot;41e2b9a8-a19c-4c6e-bbe4-a38c57a5e5ee&quot;
   }
 }</component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
 }</component>
@@ -94,7 +66,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "simulation",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.0",
