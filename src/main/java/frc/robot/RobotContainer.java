@@ -37,7 +37,6 @@ public class RobotContainer {
         shooter = new ShooterSubsystem();
         intake = new IntakeSubsystem();
         drive = new DriveTrain();
-
     }
 
     /**
@@ -53,6 +52,7 @@ public class RobotContainer {
         drive.setDefaultCommand(new Drive(drive, primary));
 
         primary.leftTrigger().whileTrue(intake.setVoltage(10));
+        primary.leftBumper().whileTrue(intake.setVoltage(-12));
         primary.rightTrigger().whileTrue(shooter.launchShooter(10.6));
     }
 
