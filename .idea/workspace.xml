@@ -75,26 +75,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Gradle.rebuilt-kitbot-2026 [build].executor": "Run",
-    "Gradle.rebuilt-kitbot-2026 [simulateJava].executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "help",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Gradle.rebuilt-kitbot-2026 [build].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.rebuilt-kitbot-2026 [simulateJava].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;help&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\amazi\IdeaProjects\rebuilt-kitbot-2026" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.rebuilt-kitbot-2026 [simulateJava]">
+  <component name="RunManager" selected="Gradle.rebuilt-kitbot-2026 [build]">
     <configuration name="rebuilt-kitbot-2026 [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -141,8 +141,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.rebuilt-kitbot-2026 [simulateJava]" />
         <item itemvalue="Gradle.rebuilt-kitbot-2026 [build]" />
+        <item itemvalue="Gradle.rebuilt-kitbot-2026 [simulateJava]" />
       </list>
     </recent_temporary>
   </component>
