@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c7ebf9f1-f7aa-495e-9deb-8d72731e11f6" name="Changes" comment="pushing cuz nothing is changed" />
+    <list default="true" id="c7ebf9f1-f7aa-495e-9deb-8d72731e11f6" name="Changes" comment="commiting">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -191,7 +193,15 @@
       <option name="project" value="LOCAL" />
       <updated>1768269342647</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="commiting">
+      <option name="closed" value="true" />
+      <created>1768345626197</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1768345626197</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -210,7 +220,8 @@
     <MESSAGE value="eject control added" />
     <MESSAGE value="sim fix" />
     <MESSAGE value="we fixed the mess up :)" />
-    <option name="LAST_COMMIT_MESSAGE" value="we fixed the mess up :)" />
+    <MESSAGE value="commiting" />
+    <option name="LAST_COMMIT_MESSAGE" value="commiting" />
   </component>
   <component name="WpiLibVersionService">
     <option name="lastChecked" value="20260113001454" />
