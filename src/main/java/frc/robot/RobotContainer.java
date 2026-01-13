@@ -44,11 +44,11 @@ public class RobotContainer {
         drive = new DriveTrain();
 
         configureBindings();
-
     }
 
-    final StructPublisher<Pose2d> posePublisher =
-            NetworkTableInstance.getDefault().getStructTopic("/Pose", Pose2d.struct).publish();
+    final StructPublisher<Pose2d> posePublisher = NetworkTableInstance.getDefault()
+            .getStructTopic("/Pose", Pose2d.struct)
+            .publish();
 
     /**
      * Use this method to define your trigger->command mappings. Triggers can be created via the
@@ -66,8 +66,7 @@ public class RobotContainer {
         primary.rightTrigger().whileTrue(shooter.launchShooter(10.6));
     }
 
-    public void updateVision() {
-    }
+    public void updateVision() {}
 
     /**
      * Use this to pass the autonomous command to the main {@link Robot} class.

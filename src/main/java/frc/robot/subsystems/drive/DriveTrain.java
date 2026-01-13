@@ -14,12 +14,8 @@ import edu.wpi.first.math.estimator.DifferentialDrivePoseEstimator;
 import edu.wpi.first.math.geometry.Pose2d;
 import edu.wpi.first.math.kinematics.DifferentialDriveKinematics;
 import edu.wpi.first.math.util.Units;
-import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
-
-
-import java.io.IOException;
 
 public class DriveTrain extends SubsystemBase {
     private final SparkMax leftLeader;
@@ -34,7 +30,6 @@ public class DriveTrain extends SubsystemBase {
     private CANcoder m_rightEncoder;
     private Pigeon2 m_gyro;
 
-
     public DriveTrain() {
         leftLeader = new SparkMax(DriveTrainConfigs.LEFT_LEADER_ID, MotorType.kBrushed);
         rightLeader = new SparkMax(DriveTrainConfigs.RIGHT_LEADER_ID, MotorType.kBrushed);
@@ -44,7 +39,6 @@ public class DriveTrain extends SubsystemBase {
         m_leftEncoder = new CANcoder(DriveTrainConfigs.LEFT_CANCODER_ID);
         m_rightEncoder = new CANcoder(DriveTrainConfigs.RIGHT_CANCODER_ID);
         m_gyro = new Pigeon2(DriveTrainConfigs.PIGEON_ID);
-
 
         drive = new DifferentialDrive(leftLeader, rightLeader);
 
@@ -65,24 +59,25 @@ public class DriveTrain extends SubsystemBase {
         config.inverted(true);
         leftLeader.configure(config, ResetMode.kResetSafeParameters, PersistMode.kPersistParameters);
 
-        m_poseEstimator =
-                new DifferentialDrivePoseEstimator(
-                        m_kinematics,
-                        m_gyro.getRotation2d(),
-                        m_leftEncoder.getDistance(),
-                        m_rightEncoder.getDistance(),
-                        new Pose2d(),
-                        VecBuilder.fill(0.05, 0.05, Units.degreesToRadians(5)),
-                        VecBuilder.fill(0.5, 0.5, Units.degreesToRadians(30)));
-
-
+        // EVERYTHING BELOW THIS is questionable
+        m_poseEstimator = new DifferentialDrivePoseEstimator(
+                m_kinematics,
+                m_gyro.getRotation2d(),
+                m_leftEncoder.getPosition().refresh().getValueAsDouble(),
+                m_rightEncoder.getPosition().refresh().getValueAsDouble(),
+                new Pose2d(),
+                VecBuilder.fill(0.05, 0.05, Units.degreesToRadians(5)),
+                VecBuilder.fill(0.5, 0.5, Units.degreesToRadians(30)));
     }
 
     @Override
     public void periodic() {
         m_poseEstimator.update(
-                m_gyro.getRotation2d(), m_leftEncoder.getDistance(), m_rightEncoder.getDistance());
+                m_gyro.getRotation2d(),
+                m_leftEncoder.getPosition().refresh().getValueAsDouble(),
+                m_rightEncoder.getPosition().refresh().getValueAsDouble());
     }
+    // END CODe
 
     public void driveArcade(double xSpeed, double zRotation) {
         drive.arcadeDrive(xSpeed, zRotation);
