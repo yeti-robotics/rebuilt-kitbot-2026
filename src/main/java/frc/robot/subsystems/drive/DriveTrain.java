@@ -30,8 +30,6 @@ public class DriveTrain extends SubsystemBase {
     private final DifferentialDrive drive;
     private DifferentialDrivePoseEstimator m_poseEstimator;
     private DifferentialDriveKinematics m_kinematics;
-    private CANcoder m_leftEncoder;
-    private CANcoder m_rightEncoder;
     private Pigeon2 m_gyro;
 
 
@@ -41,8 +39,6 @@ public class DriveTrain extends SubsystemBase {
         leftFollower = new SparkMax(DriveTrainConfigs.LEFT_FOLLOWER_ID, MotorType.kBrushed);
         rightFollower = new SparkMax(DriveTrainConfigs.RIGHT_FOLLOWER_ID, MotorType.kBrushed);
 
-        m_leftEncoder = new CANcoder(DriveTrainConfigs.LEFT_CANCODER_ID);
-        m_rightEncoder = new CANcoder(DriveTrainConfigs.RIGHT_CANCODER_ID);
         m_gyro = new Pigeon2(DriveTrainConfigs.PIGEON_ID);
 
 
@@ -69,8 +65,8 @@ public class DriveTrain extends SubsystemBase {
                 new DifferentialDrivePoseEstimator(
                         m_kinematics,
                         m_gyro.getRotation2d(),
-                        m_leftEncoder.getDistance(),
-                        m_rightEncoder.getDistance(),
+                        leftLeader.getEncoder().getPosition(),
+                        rightLeader.getEncoder().getPosition(),
                         new Pose2d(),
                         VecBuilder.fill(0.05, 0.05, Units.degreesToRadians(5)),
                         VecBuilder.fill(0.5, 0.5, Units.degreesToRadians(30)));
@@ -81,7 +77,7 @@ public class DriveTrain extends SubsystemBase {
     @Override
     public void periodic() {
         m_poseEstimator.update(
-                m_gyro.getRotation2d(), m_leftEncoder.getDistance(), m_rightEncoder.getDistance());
+                m_gyro.getRotation2d(), leftLeader.getEncoder().getPosition(), rightLeader.getEncoder().getPosition());
     }
 
     public void driveArcade(double xSpeed, double zRotation) {
