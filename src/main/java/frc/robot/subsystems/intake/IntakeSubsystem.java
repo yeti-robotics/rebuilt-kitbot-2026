@@ -11,7 +11,7 @@ public class IntakeSubsystem extends SubsystemBase {
     private final SparkMax intakeRoller;
 
     public IntakeSubsystem() {
-        intakeRoller = new SparkMax(IntakeConfigs.intakeMotorID, SparkLowLevel.MotorType.kBrushed);
+        intakeRoller = new SparkMax(IntakeConfigs.intakeMotorID, SparkLowLevel.MotorType.kBrushless);
         intakeRoller.configure(
                 IntakeConfigs.feederConfig, ResetMode.kResetSafeParameters, PersistMode.kPersistParameters);
     }

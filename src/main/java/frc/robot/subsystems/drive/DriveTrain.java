@@ -34,10 +34,10 @@ public class DriveTrain extends SubsystemBase {
 
 
     public DriveTrain() {
-        leftLeader = new SparkMax(DriveTrainConfigs.LEFT_LEADER_ID, MotorType.kBrushed);
-        rightLeader = new SparkMax(DriveTrainConfigs.RIGHT_LEADER_ID, MotorType.kBrushed);
-        leftFollower = new SparkMax(DriveTrainConfigs.LEFT_FOLLOWER_ID, MotorType.kBrushed);
-        rightFollower = new SparkMax(DriveTrainConfigs.RIGHT_FOLLOWER_ID, MotorType.kBrushed);
+        leftLeader = new SparkMax(DriveTrainConfigs.LEFT_LEADER_ID, MotorType.kBrushless);
+        rightLeader = new SparkMax(DriveTrainConfigs.RIGHT_LEADER_ID, MotorType.kBrushless);
+        leftFollower = new SparkMax(DriveTrainConfigs.LEFT_FOLLOWER_ID, MotorType.kBrushless);
+        rightFollower = new SparkMax(DriveTrainConfigs.RIGHT_FOLLOWER_ID, MotorType.kBrushless);
 
         m_gyro = new Pigeon2(DriveTrainConfigs.PIGEON_ID);
 

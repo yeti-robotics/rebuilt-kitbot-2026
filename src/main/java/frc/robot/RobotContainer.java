@@ -63,10 +63,8 @@ public class RobotContainer {
         drive.setDefaultCommand(new Drive(drive, primary));
 
         primary.leftTrigger().whileTrue(intake.setVoltage(10));
-        primary.rightTrigger(0.05).whileTrue(shooter.launchShooter(primary.getRightTriggerAxis() * 10));
-    }
-
-    public void updateVision() {
+        primary.leftBumper().whileTrue(intake.setVoltage(-12));
+        primary.rightTrigger().whileTrue(shooter.launchShooter(10.6));
     }
 
     /**
