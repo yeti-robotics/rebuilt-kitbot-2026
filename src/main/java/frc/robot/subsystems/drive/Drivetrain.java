@@ -1,6 +1,6 @@
 package frc.robot.subsystems.drive;
 
-import static frc.robot.subsystems.drive.DriveTrainConfigs.DRIVE_MOTOR_CURRENT_LIMIT;
+import static frc.robot.subsystems.drive.DrivetrainConfigs.DRIVE_MOTOR_CURRENT_LIMIT;
 
 import com.revrobotics.PersistMode;
 import com.revrobotics.ResetMode;
@@ -10,7 +10,7 @@ import com.revrobotics.spark.config.SparkMaxConfig;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
-public class DriveTrain extends SubsystemBase {
+public class Drivetrain extends SubsystemBase {
     private final SparkMax leftLeader;
     private final SparkMax rightLeader;
     private final SparkMax leftFollower;
@@ -18,11 +18,11 @@ public class DriveTrain extends SubsystemBase {
 
     private final DifferentialDrive drive;
 
-    public DriveTrain() {
-        leftLeader = new SparkMax(DriveTrainConfigs.LEFT_LEADER_ID, MotorType.kBrushed);
-        rightLeader = new SparkMax(DriveTrainConfigs.RIGHT_LEADER_ID, MotorType.kBrushed);
-        leftFollower = new SparkMax(DriveTrainConfigs.LEFT_FOLLOWER_ID, MotorType.kBrushed);
-        rightFollower = new SparkMax(DriveTrainConfigs.RIGHT_FOLLOWER_ID, MotorType.kBrushed);
+    public Drivetrain() {
+        leftLeader = new SparkMax(DrivetrainConfigs.LEFT_LEADER_ID, MotorType.kBrushed);
+        rightLeader = new SparkMax(DrivetrainConfigs.RIGHT_LEADER_ID, MotorType.kBrushed);
+        leftFollower = new SparkMax(DrivetrainConfigs.LEFT_FOLLOWER_ID, MotorType.kBrushed);
+        rightFollower = new SparkMax(DrivetrainConfigs.RIGHT_FOLLOWER_ID, MotorType.kBrushed);
 
         drive = new DifferentialDrive(leftLeader, rightLeader);
 

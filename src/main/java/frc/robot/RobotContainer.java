@@ -10,9 +10,9 @@ import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
 import frc.robot.Commands.Drive;
 import frc.robot.constants.Constants;
-import frc.robot.subsystems.drive.DriveTrain;
-import frc.robot.subsystems.intake.IntakeSubsystem;
-import frc.robot.subsystems.shooter.ShooterSubsystem;
+import frc.robot.subsystems.drive.Drivetrain;
+import frc.robot.subsystems.intake.FeederSubsystem;
+import frc.robot.subsystems.shooter.IntakeLauncherSubsystem;
 
 /**
  * This class is where the bulk of the robot should be declared. Since Command-based is a
@@ -25,17 +25,17 @@ public class RobotContainer {
     CommandXboxController primary;
 
     // Subsystems
-    private final ShooterSubsystem shooter;
-    private final IntakeSubsystem intake;
-    private final DriveTrain drive;
+    private final IntakeLauncherSubsystem intakeLauncher;
+    private final FeederSubsystem feeder;
+    private final Drivetrain drive;
 
     /** The container for the robot. Contains subsystems, OI devices, and commands. */
     public RobotContainer() {
         primary = new CommandXboxController(Constants.PRIMARY_CONTROLLER_PORT);
 
-        shooter = new ShooterSubsystem();
-        intake = new IntakeSubsystem();
-        drive = new DriveTrain();
+        intakeLauncher = new IntakeLauncherSubsystem();
+        feeder = new FeederSubsystem();
+        drive = new Drivetrain();
         configureBindings();
     }
 
@@ -51,9 +51,14 @@ public class RobotContainer {
     private void configureBindings() {
         drive.setDefaultCommand(new Drive(drive, primary));
 
-        primary.leftTrigger().whileTrue(intake.setVoltage(10));
-        primary.leftBumper().whileTrue(intake.setVoltage(-12));
-        primary.rightTrigger().whileTrue(shooter.launchShooter(10.6));
+        // intaking
+        primary.leftTrigger().whileTrue(intakeLauncher.setVoltage(10).alongWith(feeder.setVoltage(-12)));
+
+        // feeding and shooting
+        primary.leftBumper().whileTrue(feeder.setVoltage(9).alongWith(intakeLauncher.setVoltage(10.6)));
+
+        // ejecting
+        primary.rightTrigger().whileTrue(intakeLauncher.setVoltage(-6));
     }
 
     /**
