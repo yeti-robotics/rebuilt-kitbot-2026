@@ -5,6 +5,10 @@
 
 package frc.robot;
 
+import edu.wpi.first.epilogue.Logged;
+import edu.wpi.first.math.geometry.Pose2d;
+import edu.wpi.first.networktables.NetworkTableInstance;
+import edu.wpi.first.networktables.StructPublisher;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
@@ -27,17 +31,24 @@ public class RobotContainer {
     // Subsystems
     private final ShooterSubsystem shooter;
     private final IntakeSubsystem intake;
+
+    @Logged(name = "Drive/Odometry")
     private final DriveTrain drive;
 
     /** The container for the robot. Contains subsystems, OI devices, and commands. */
     public RobotContainer() {
         primary = new CommandXboxController(Constants.PRIMARY_CONTROLLER_PORT);
-        configureBindings();
 
         shooter = new ShooterSubsystem();
         intake = new IntakeSubsystem();
         drive = new DriveTrain();
+
+        configureBindings();
+
     }
+
+    final StructPublisher<Pose2d> posePublisher =
+            NetworkTableInstance.getDefault().getStructTopic("/Pose", Pose2d.struct).publish();
 
     /**
      * Use this method to define your trigger->command mappings. Triggers can be created via the
@@ -53,6 +64,9 @@ public class RobotContainer {
 
         primary.leftTrigger().whileTrue(intake.setVoltage(10));
         primary.rightTrigger().whileTrue(shooter.launchShooter(10.6));
+    }
+
+    public void updateVision() {
     }
 
     /**

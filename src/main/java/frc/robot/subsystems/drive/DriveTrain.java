@@ -2,13 +2,24 @@ package frc.robot.subsystems.drive;
 
 import static frc.robot.subsystems.drive.DriveTrainConfigs.DRIVE_MOTOR_CURRENT_LIMIT;
 
+import com.ctre.phoenix6.hardware.CANcoder;
+import com.ctre.phoenix6.hardware.Pigeon2;
 import com.revrobotics.PersistMode;
 import com.revrobotics.ResetMode;
 import com.revrobotics.spark.SparkLowLevel.MotorType;
 import com.revrobotics.spark.SparkMax;
 import com.revrobotics.spark.config.SparkMaxConfig;
+import edu.wpi.first.math.VecBuilder;
+import edu.wpi.first.math.estimator.DifferentialDrivePoseEstimator;
+import edu.wpi.first.math.geometry.Pose2d;
+import edu.wpi.first.math.kinematics.DifferentialDriveKinematics;
+import edu.wpi.first.math.util.Units;
+import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+
+
+import java.io.IOException;
 
 public class DriveTrain extends SubsystemBase {
     private final SparkMax leftLeader;
@@ -17,12 +28,23 @@ public class DriveTrain extends SubsystemBase {
     private final SparkMax rightFollower;
 
     private final DifferentialDrive drive;
+    private DifferentialDrivePoseEstimator m_poseEstimator;
+    private DifferentialDriveKinematics m_kinematics;
+    private CANcoder m_leftEncoder;
+    private CANcoder m_rightEncoder;
+    private Pigeon2 m_gyro;
+
 
     public DriveTrain() {
         leftLeader = new SparkMax(DriveTrainConfigs.LEFT_LEADER_ID, MotorType.kBrushed);
         rightLeader = new SparkMax(DriveTrainConfigs.RIGHT_LEADER_ID, MotorType.kBrushed);
         leftFollower = new SparkMax(DriveTrainConfigs.LEFT_FOLLOWER_ID, MotorType.kBrushed);
         rightFollower = new SparkMax(DriveTrainConfigs.RIGHT_FOLLOWER_ID, MotorType.kBrushed);
+
+        m_leftEncoder = new CANcoder(DriveTrainConfigs.LEFT_CANCODER_ID);
+        m_rightEncoder = new CANcoder(DriveTrainConfigs.RIGHT_CANCODER_ID);
+        m_gyro = new Pigeon2(DriveTrainConfigs.PIGEON_ID);
+
 
         drive = new DifferentialDrive(leftLeader, rightLeader);
 
@@ -42,10 +64,25 @@ public class DriveTrain extends SubsystemBase {
         // so that postive values drive both sides forward
         config.inverted(true);
         leftLeader.configure(config, ResetMode.kResetSafeParameters, PersistMode.kPersistParameters);
+
+        m_poseEstimator =
+                new DifferentialDrivePoseEstimator(
+                        m_kinematics,
+                        m_gyro.getRotation2d(),
+                        m_leftEncoder.getDistance(),
+                        m_rightEncoder.getDistance(),
+                        new Pose2d(),
+                        VecBuilder.fill(0.05, 0.05, Units.degreesToRadians(5)),
+                        VecBuilder.fill(0.5, 0.5, Units.degreesToRadians(30)));
+
+
     }
 
     @Override
-    public void periodic() {}
+    public void periodic() {
+        m_poseEstimator.update(
+                m_gyro.getRotation2d(), m_leftEncoder.getDistance(), m_rightEncoder.getDistance());
+    }
 
     public void driveArcade(double xSpeed, double zRotation) {
         drive.arcadeDrive(xSpeed, zRotation);
