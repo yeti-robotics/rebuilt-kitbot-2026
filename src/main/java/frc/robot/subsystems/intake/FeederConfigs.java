@@ -3,7 +3,7 @@ package frc.robot.subsystems.intake;
 import com.revrobotics.spark.config.SparkMaxConfig;
 
 public class FeederConfigs {
-    static final int feederMotorID = 5;
+    static final int feederMotorID = 6;
     static final int feederMotorCurrentLimit = 60;
 
     static final SparkMaxConfig feederConfig =

@@ -52,13 +52,25 @@ public class RobotContainer {
         drive.setDefaultCommand(new Drive(drive, primary));
 
         // intaking
-        primary.leftTrigger().whileTrue(intakeLauncher.setVoltage(10).alongWith(feeder.setVoltage(-12)));
+        primary.leftTrigger().whileTrue(intakeCommand());
 
         // feeding and shooting
-        primary.leftBumper().whileTrue(feeder.setVoltage(9).alongWith(intakeLauncher.setVoltage(10.6)));
+        primary.leftBumper().whileTrue(feedAndShootCommand());
 
         // ejecting
-        primary.rightTrigger().whileTrue(intakeLauncher.setVoltage(-6));
+        primary.rightTrigger().whileTrue(ejectCommand());
+    }
+
+    private Command intakeCommand() {
+        return intakeLauncher.setVoltage(10).alongWith(feeder.setVoltage(-12));
+    }
+
+    private Command feedAndShootCommand() {
+        return intakeLauncher.setVoltage(9).alongWith(feeder.setVoltage(10.6));
+    }
+
+    private Command ejectCommand() {
+        return intakeLauncher.setVoltage(-6);
     }
 
     /**

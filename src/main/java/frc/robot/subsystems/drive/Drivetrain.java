@@ -19,10 +19,10 @@ public class Drivetrain extends SubsystemBase {
     private final DifferentialDrive drive;
 
     public Drivetrain() {
-        leftLeader = new SparkMax(DrivetrainConfigs.LEFT_LEADER_ID, MotorType.kBrushed);
-        rightLeader = new SparkMax(DrivetrainConfigs.RIGHT_LEADER_ID, MotorType.kBrushed);
-        leftFollower = new SparkMax(DrivetrainConfigs.LEFT_FOLLOWER_ID, MotorType.kBrushed);
-        rightFollower = new SparkMax(DrivetrainConfigs.RIGHT_FOLLOWER_ID, MotorType.kBrushed);
+        leftLeader = new SparkMax(DrivetrainConfigs.LEFT_LEADER_ID, MotorType.kBrushless);
+        rightLeader = new SparkMax(DrivetrainConfigs.RIGHT_LEADER_ID, MotorType.kBrushless);
+        leftFollower = new SparkMax(DrivetrainConfigs.LEFT_FOLLOWER_ID, MotorType.kBrushless);
+        rightFollower = new SparkMax(DrivetrainConfigs.RIGHT_FOLLOWER_ID, MotorType.kBrushless);
 
         drive = new DifferentialDrive(leftLeader, rightLeader);
 
