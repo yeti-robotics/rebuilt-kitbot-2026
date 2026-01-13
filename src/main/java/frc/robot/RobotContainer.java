@@ -44,11 +44,11 @@ public class RobotContainer {
         drive = new DriveTrain();
 
         configureBindings();
-
     }
 
-    final StructPublisher<Pose2d> posePublisher =
-            NetworkTableInstance.getDefault().getStructTopic("/Pose", Pose2d.struct).publish();
+    final StructPublisher<Pose2d> posePublisher = NetworkTableInstance.getDefault()
+            .getStructTopic("/Pose", Pose2d.struct)
+            .publish();
 
     /**
      * Use this method to define your trigger->command mappings. Triggers can be created via the
