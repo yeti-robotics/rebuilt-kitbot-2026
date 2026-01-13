@@ -11,7 +11,7 @@ public class ShooterSubsystem extends SubsystemBase {
     private final SparkMax shooterMotor;
 
     public ShooterSubsystem() {
-        shooterMotor = new SparkMax(ShooterConfigs.shooterMotorID, MotorType.kBrushed);
+        shooterMotor = new SparkMax(ShooterConfigs.shooterMotorID, MotorType.kBrushless);
         shooterMotor.configure(
                 ShooterConfigs.shooterConfig, ResetMode.kResetSafeParameters, PersistMode.kPersistParameters);
     }
