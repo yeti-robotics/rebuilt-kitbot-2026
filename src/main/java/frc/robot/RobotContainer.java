@@ -58,7 +58,7 @@ public class RobotContainer {
         primary.leftBumper().whileTrue(feedAndShootCommand());
 
         // ejecting
-        primary.rightTrigger().whileTrue(ejectCommand());
+        primary.rightTrigger().whileTrue(intakeLauncher.eject(-6));
     }
 
     private Command intakeCommand() {
@@ -67,10 +67,6 @@ public class RobotContainer {
 
     private Command feedAndShootCommand() {
         return intakeLauncher.setVoltage(9).alongWith(feeder.setVoltage(10.6));
-    }
-
-    private Command ejectCommand() {
-        return intakeLauncher.setVoltage(-6);
     }
 
     /**

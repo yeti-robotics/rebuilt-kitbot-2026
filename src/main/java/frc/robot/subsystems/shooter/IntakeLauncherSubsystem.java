@@ -21,4 +21,8 @@ public class IntakeLauncherSubsystem extends SubsystemBase {
     public Command setVoltage(double voltage) {
         return run(() -> intakeLauncherMotor.setVoltage(voltage));
     }
+
+    public Command eject(double ejectVoltage) {
+        return run(() -> intakeLauncherMotor.setVoltage(ejectVoltage));
+    }
 }
