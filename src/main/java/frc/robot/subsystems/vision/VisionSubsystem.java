@@ -3,7 +3,6 @@ package frc.robot.subsystems.vision;
 import edu.wpi.first.wpilibj2.command.*;
 import frc.robot.LimelightHelpers;
 
-
 public class VisionSubsystem extends SubsystemBase {
 
     public class VisionConstants {
@@ -23,5 +22,4 @@ public class VisionSubsystem extends SubsystemBase {
     public LimelightHelpers.LimelightResults getTargetingResults() {
         return LimelightHelpers.getLatestResults(VisionConstants.LIMELIGHT_NAME);
     }
-
 }

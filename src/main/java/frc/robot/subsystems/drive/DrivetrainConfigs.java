@@ -1,6 +1,6 @@
 package frc.robot.subsystems.drive;
 
-public class DriveTrainConfigs {
+public class DrivetrainConfigs {
     public static final int LEFT_LEADER_ID = 1;
     public static final int RIGHT_LEADER_ID = 2;
     public static final int LEFT_FOLLOWER_ID = 3;

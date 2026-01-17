@@ -1,6 +1,6 @@
 package frc.robot.subsystems.drive;
 
-import static frc.robot.subsystems.drive.DriveTrainConfigs.DRIVE_MOTOR_CURRENT_LIMIT;
+import static frc.robot.subsystems.drive.DrivetrainConfigs.DRIVE_MOTOR_CURRENT_LIMIT;
 
 import com.ctre.phoenix6.hardware.Pigeon2;
 import com.revrobotics.PersistMode;
@@ -16,7 +16,7 @@ import edu.wpi.first.math.util.Units;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
-public class DriveTrain extends SubsystemBase {
+public class Drivetrain extends SubsystemBase {
     private final SparkMax leftLeader;
     private final SparkMax rightLeader;
     private final SparkMax leftFollower;
@@ -27,13 +27,13 @@ public class DriveTrain extends SubsystemBase {
     private DifferentialDriveKinematics m_kinematics;
     private Pigeon2 m_gyro;
 
-    public DriveTrain() {
-        leftLeader = new SparkMax(DriveTrainConfigs.LEFT_LEADER_ID, MotorType.kBrushless);
-        rightLeader = new SparkMax(DriveTrainConfigs.RIGHT_LEADER_ID, MotorType.kBrushless);
-        leftFollower = new SparkMax(DriveTrainConfigs.LEFT_FOLLOWER_ID, MotorType.kBrushless);
-        rightFollower = new SparkMax(DriveTrainConfigs.RIGHT_FOLLOWER_ID, MotorType.kBrushless);
+    public Drivetrain() {
+        leftLeader = new SparkMax(DrivetrainConfigs.LEFT_LEADER_ID, MotorType.kBrushless);
+        rightLeader = new SparkMax(DrivetrainConfigs.RIGHT_LEADER_ID, MotorType.kBrushless);
+        leftFollower = new SparkMax(DrivetrainConfigs.LEFT_FOLLOWER_ID, MotorType.kBrushless);
+        rightFollower = new SparkMax(DrivetrainConfigs.RIGHT_FOLLOWER_ID, MotorType.kBrushless);
 
-        m_gyro = new Pigeon2(DriveTrainConfigs.PIGEON_ID);
+        m_gyro = new Pigeon2(DrivetrainConfigs.PIGEON_ID);
 
         drive = new DifferentialDrive(leftLeader, rightLeader);
 
