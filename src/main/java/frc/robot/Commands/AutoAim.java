@@ -1,15 +1,15 @@
 package frc.robot.Commands;
 
 import edu.wpi.first.wpilibj2.command.Command;
-import frc.robot.subsystems.drive.DriveTrain;
+import frc.robot.subsystems.drive.Drivetrain;
 import frc.robot.subsystems.vision.VisionSubsystem;
 
 public class AutoAim extends Command {
-    DriveTrain drive;
+    Drivetrain drive;
     VisionSubsystem vision;
     double Kp = -0.1;
 
-    public AutoAim(DriveTrain drive, VisionSubsystem vision) {
+    public AutoAim(Drivetrain drive, VisionSubsystem vision) {
         // Use addRequirements() here to declare subsystem dependencies.
         addRequirements(drive);
         drive = drive;
