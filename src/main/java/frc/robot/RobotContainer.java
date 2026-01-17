@@ -57,7 +57,7 @@ public class RobotContainer {
 
         primary.leftTrigger().whileTrue(intakeCommand());
         primary.leftBumper().whileTrue(feedAndShootCommand());
-        primary.rightTrigger().whileTrue(intakeLauncher.eject());
+        primary.rightTrigger().whileTrue(intakeLauncher.eject(primary.getRightTriggerAxis() * -6));
 
         primary.rightBumper().whileTrue(new AutoAim(drive, vision));
     }

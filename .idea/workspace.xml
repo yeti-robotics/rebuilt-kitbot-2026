@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c7ebf9f1-f7aa-495e-9deb-8d72731e11f6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/frc/robot/Commands/AutoAim.java" afterDir="false" />
+    <list default="true" id="c7ebf9f1-f7aa-495e-9deb-8d72731e11f6" name="Changes" comment="" />
+    <change afterPath="$PROJECT_DIR$/src/main/java/frc/robot/Commands/AutoAim.java" afterDir="false" />
     <list default="true" id="c7ebf9f1-f7aa-495e-9deb-8d72731e11f6" name="Changes" comment="commiting">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/frc/robot/RobotContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frc/robot/RobotContainer.java" afterDir="false" />
@@ -100,33 +100,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Gradle.rebuilt-kitbot-2026 [build].executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "#16 on vision",
-    "kotlin-language-version-configured": "true",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle"
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;Gradle.rebuilt-kitbot-2026 [build].executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.rebuilt-kitbot-2026 [simulateJava].executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;#13 on help&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;#16 on vision&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;
+  &lt;component name=&quot;PropertiesComponent&quot;&gt;{
+  &amp;quot;keyToString&amp;quot;: {
+    &amp;quot;Gradle.rebuilt-kitbot-2026 [build].executor&amp;quot;: &amp;quot;Run&amp;quot;,
+    &amp;quot;Gradle.rebuilt-kitbot-2026 [simulateJava].executor&amp;quot;: &amp;quot;Run&amp;quot;,
+    &amp;quot;RunOnceActivity.ShowReadmeOnStart&amp;quot;: &amp;quot;true&amp;quot;,
+    &amp;quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&amp;quot;: &amp;quot;true&amp;quot;,
+    &amp;quot;RunOnceActivity.git.unshallow&amp;quot;: &amp;quot;true&amp;quot;,
+    &amp;quot;git-widget-placeholder&amp;quot;: &amp;quot;#13 on help&amp;quot;,
+    &amp;quot;project.structure.last.edited&amp;quot;: &amp;quot;Project&amp;quot;,
+    &amp;quot;project.structure.proportion&amp;quot;: &amp;quot;0.15&amp;quot;,
+    &amp;quot;project.structure.side.proportion&amp;quot;: &amp;quot;0.0&amp;quot;,
+    &amp;quot;settings.editor.selected.configurable&amp;quot;: &amp;quot;reference.settingsdialog.project.gradle&amp;quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\amazi\IdeaProjects\rebuilt-kitbot-2026" />
@@ -246,7 +246,7 @@
       <updated>1768345626197</updated>
     </task>
     <option name="localTasksCounter" value="6" />
-    <task id="LOCAL-00002" summary="this is just kitty code minus leds plus the new version of limelight helpers (only thing changed was targetResults is gone)">
+    <task id="LOCAL-00002" summary="this is just kitty code minus leds plus the new version of limelight helpers (only thing changed was targetResults is gone)" />
     <task id="LOCAL-00002" summary="eject control added">
       <option name="closed" value="true" />
       <created>1768260329727</created>
@@ -281,17 +281,6 @@
     </task>
     <option name="localTasksCounter" value="6" />
     <servers />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">

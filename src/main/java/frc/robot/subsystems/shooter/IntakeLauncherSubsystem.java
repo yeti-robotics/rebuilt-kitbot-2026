@@ -22,7 +22,7 @@ public class IntakeLauncherSubsystem extends SubsystemBase {
         return run(() -> intakeLauncherMotor.setVoltage(voltage));
     }
 
-    public Command eject() {
-        return run(() -> intakeLauncherMotor.setVoltage(-6));
+    public Command eject(double volts) {
+        return run(() -> intakeLauncherMotor.setVoltage(volts));
     }
 }
