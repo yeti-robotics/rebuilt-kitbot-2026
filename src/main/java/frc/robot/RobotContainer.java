@@ -58,7 +58,7 @@ public class RobotContainer {
         primary.leftBumper().whileTrue(feedAndShootCommand());
 
         // ejecting
-        primary.rightTrigger().whileTrue(intakeLauncher.eject(-6));
+        primary.rightTrigger().whileTrue(intakeLauncher.eject());
     }
 
     private Command intakeCommand() {
