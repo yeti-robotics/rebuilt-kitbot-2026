@@ -13,6 +13,8 @@ import frc.robot.constants.Constants;
 import frc.robot.subsystems.drive.DriveTrain;
 import frc.robot.subsystems.intake.IntakeSubsystem;
 import frc.robot.subsystems.shooter.ShooterSubsystem;
+import frc.robot.subsystems.vision.VisionSubsystem;
+import frc.robot.Commands.AutoAim;
 
 /**
  * This class is where the bulk of the robot should be declared. Since Command-based is a
@@ -28,6 +30,7 @@ public class RobotContainer {
     private final ShooterSubsystem shooter;
     private final IntakeSubsystem intake;
     private final DriveTrain drive;
+    private final VisionSubsystem vision;
 
     /** The container for the robot. Contains subsystems, OI devices, and commands. */
     public RobotContainer() {
@@ -37,6 +40,7 @@ public class RobotContainer {
         intake = new IntakeSubsystem();
         drive = new DriveTrain();
         configureBindings();
+        vision = new VisionSubsystem();
     }
 
     /**
@@ -54,6 +58,8 @@ public class RobotContainer {
         primary.leftTrigger().whileTrue(intake.setVoltage(10));
         primary.leftBumper().whileTrue(intake.setVoltage(-12));
         primary.rightTrigger().whileTrue(shooter.launchShooter(10.6));
+
+        primary.rightBumper().whileTrue(new AutoAim(drive, vision));
     }
 
     /**
