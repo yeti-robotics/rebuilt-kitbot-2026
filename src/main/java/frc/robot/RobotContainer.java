@@ -64,7 +64,7 @@ public class RobotContainer {
 
         primary.leftTrigger().whileTrue(intake.setVoltage(10));
         primary.leftBumper().whileTrue(intake.setVoltage(-12));
-        primary.rightTrigger().whileTrue(shooter.launchShooter(10.6));
+        primary.rightTrigger(0.05).whileTrue(shooter.launchShooter(primary.getRightTriggerAxis() * 10));
     }
 
     /**
