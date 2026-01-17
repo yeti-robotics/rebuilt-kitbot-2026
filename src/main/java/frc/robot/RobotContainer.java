@@ -10,9 +10,11 @@ import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
 import frc.robot.Commands.Drive;
 import frc.robot.constants.Constants;
-import frc.robot.subsystems.drive.Drivetrain;
-import frc.robot.subsystems.intake.FeederSubsystem;
-import frc.robot.subsystems.shooter.IntakeLauncherSubsystem;
+import frc.robot.subsystems.drive.DriveTrain;
+import frc.robot.subsystems.intake.IntakeSubsystem;
+import frc.robot.subsystems.shooter.ShooterSubsystem;
+import frc.robot.subsystems.vision.VisionSubsystem;
+import frc.robot.Commands.AutoAim;
 
 /**
  * This class is where the bulk of the robot should be declared. Since Command-based is a
@@ -25,9 +27,10 @@ public class RobotContainer {
     CommandXboxController primary;
 
     // Subsystems
-    private final IntakeLauncherSubsystem intakeLauncher;
-    private final FeederSubsystem feeder;
-    private final Drivetrain drive;
+    private final ShooterSubsystem shooter;
+    private final IntakeSubsystem intake;
+    private final DriveTrain drive;
+    private final VisionSubsystem vision;
 
     /** The container for the robot. Contains subsystems, OI devices, and commands. */
     public RobotContainer() {
@@ -37,6 +40,7 @@ public class RobotContainer {
         feeder = new FeederSubsystem();
         drive = new Drivetrain();
         configureBindings();
+        vision = new VisionSubsystem();
     }
 
     /**
@@ -51,22 +55,11 @@ public class RobotContainer {
     private void configureBindings() {
         drive.setDefaultCommand(new Drive(drive, primary));
 
-        // intaking
-        primary.leftTrigger().whileTrue(intakeCommand());
+        primary.leftTrigger().whileTrue(intake.setVoltage(10));
+        primary.leftBumper().whileTrue(intake.setVoltage(-12));
+        primary.rightTrigger().whileTrue(shooter.launchShooter(10.6));
 
-        // feeding and shooting
-        primary.leftBumper().whileTrue(feedAndShootCommand());
-
-        // ejecting
-        primary.rightTrigger().whileTrue(intakeLauncher.eject());
-    }
-
-    private Command intakeCommand() {
-        return intakeLauncher.setVoltage(10).alongWith(feeder.setVoltage(-12));
-    }
-
-    private Command feedAndShootCommand() {
-        return intakeLauncher.setVoltage(9).alongWith(feeder.setVoltage(10.6));
+        primary.rightBumper().whileTrue(new AutoAim(drive, vision));
     }
 
     /**
