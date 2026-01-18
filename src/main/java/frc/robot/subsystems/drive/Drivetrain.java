@@ -8,6 +8,7 @@ import com.revrobotics.spark.SparkLowLevel.MotorType;
 import com.revrobotics.spark.SparkMax;
 import com.revrobotics.spark.config.SparkMaxConfig;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
+import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class Drivetrain extends SubsystemBase {
@@ -30,17 +31,19 @@ public class Drivetrain extends SubsystemBase {
                 new SparkMaxConfig().voltageCompensation(12).smartCurrentLimit(DRIVE_MOTOR_CURRENT_LIMIT);
 
         // they kept calling methods that just didn't exist this is awesome
-        config.follow(leftLeader);
+        // config.follow(leftLeader);
         leftFollower.configure(config, ResetMode.kResetSafeParameters, PersistMode.kPersistParameters);
-        config.follow(rightLeader);
+        // config.follow(rightLeader);
+        config.inverted(true);
         rightFollower.configure(config, ResetMode.kResetSafeParameters, PersistMode.kPersistParameters);
 
         // Remove following, then apply config to right leader
         config.disableFollowerMode();
+        config.inverted(true);
         rightLeader.configure(config, ResetMode.kResetSafeParameters, PersistMode.kPersistParameters);
         // Set config to inverted and then apply to left leader. Set Left side inverted
         // so that postive values drive both sides forward
-        config.inverted(true);
+        config.inverted(false);
         leftLeader.configure(config, ResetMode.kResetSafeParameters, PersistMode.kPersistParameters);
     }
 
@@ -49,5 +52,9 @@ public class Drivetrain extends SubsystemBase {
 
     public void driveArcade(double xSpeed, double zRotation) {
         drive.arcadeDrive(xSpeed, zRotation);
+    }
+
+    public Command driveLeft() {
+        return runEnd(() -> rightFollower.set(0.2), () -> rightFollower.set(0));
     }
 }

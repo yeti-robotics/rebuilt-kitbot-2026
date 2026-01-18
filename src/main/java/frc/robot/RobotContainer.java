@@ -60,6 +60,7 @@ public class RobotContainer {
         primary.rightTrigger().whileTrue(intakeLauncher.eject());
 
         primary.rightBumper().whileTrue(new AutoAim(drive, vision));
+        primary.b().whileTrue(drive.driveLeft());
     }
 
     private Command intakeCommand() {
