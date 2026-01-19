@@ -6,6 +6,7 @@ import com.revrobotics.PersistMode;
 import com.revrobotics.ResetMode;
 import com.revrobotics.spark.SparkLowLevel.MotorType;
 import com.revrobotics.spark.SparkMax;
+import com.revrobotics.spark.config.SparkBaseConfig;
 import com.revrobotics.spark.config.SparkMaxConfig;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj2.command.Command;
@@ -28,7 +29,7 @@ public class Drivetrain extends SubsystemBase {
         drive = new DifferentialDrive(leftLeader, rightLeader);
 
         final SparkMaxConfig config = (SparkMaxConfig)
-                new SparkMaxConfig().voltageCompensation(12).smartCurrentLimit(DRIVE_MOTOR_CURRENT_LIMIT);
+                new SparkMaxConfig().voltageCompensation(12).smartCurrentLimit(DRIVE_MOTOR_CURRENT_LIMIT).idleMode(SparkBaseConfig.IdleMode.kBrake);
 
         // they kept calling methods that just didn't exist this is awesome
         // config.follow(leftLeader);

@@ -4,7 +4,7 @@ import com.revrobotics.spark.config.SparkMaxConfig;
 
 public class IntakeLauncherConfigs {
 
-    static final int intakeLauncherMotorID = 3;
+    static final int intakeLauncherMotorID = 10;
     static final int intakeLauncherMotorCurrentLimit = 60;
 
     static final SparkMaxConfig intakeLauncherConfig =
