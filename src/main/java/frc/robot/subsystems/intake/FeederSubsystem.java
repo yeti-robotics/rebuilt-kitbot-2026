@@ -11,12 +11,12 @@ public class FeederSubsystem extends SubsystemBase {
     private final SparkMax feederRoller;
 
     public FeederSubsystem() {
-        feederRoller = new SparkMax(FeederConfigs.feederMotorID, SparkLowLevel.MotorType.kBrushed);
+        feederRoller = new SparkMax(FeederConfigs.feederMotorID, SparkLowLevel.MotorType.kBrushless);
         feederRoller.configure(
                 FeederConfigs.feederConfig, ResetMode.kResetSafeParameters, PersistMode.kPersistParameters);
     }
 
     public Command setVoltage(double voltage) {
-        return run(() -> feederRoller.setVoltage(voltage));
+        return runEnd(() -> feederRoller.setVoltage(voltage), () -> feederRoller.setVoltage(0));
     }
 }

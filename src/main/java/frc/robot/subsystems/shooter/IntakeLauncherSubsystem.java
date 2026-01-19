@@ -11,7 +11,7 @@ public class IntakeLauncherSubsystem extends SubsystemBase {
     private final SparkMax intakeLauncherMotor;
 
     public IntakeLauncherSubsystem() {
-        intakeLauncherMotor = new SparkMax(IntakeLauncherConfigs.intakeLauncherMotorID, MotorType.kBrushed);
+        intakeLauncherMotor = new SparkMax(IntakeLauncherConfigs.intakeLauncherMotorID, MotorType.kBrushless);
         intakeLauncherMotor.configure(
                 IntakeLauncherConfigs.intakeLauncherConfig,
                 ResetMode.kResetSafeParameters,
@@ -19,10 +19,14 @@ public class IntakeLauncherSubsystem extends SubsystemBase {
     }
 
     public Command setVoltage(double voltage) {
-        return run(() -> intakeLauncherMotor.setVoltage(voltage));
+        return startEnd(() -> intakeLauncherMotor.setVoltage(voltage), () -> intakeLauncherMotor.setVoltage(0));
     }
 
     public Command eject() {
         return run(() -> intakeLauncherMotor.setVoltage(-6));
+    }
+
+    public Command testing() {
+        return startEnd(() -> intakeLauncherMotor.set(1), () -> intakeLauncherMotor.set(0));
     }
 }
