@@ -32,6 +32,9 @@ public class RobotContainer {
     private final Drivetrain drive;
     private final VisionSubsystem vision;
 
+    // Commands
+    private final AutoAim autoAim;
+
     /** The container for the robot. Contains subsystems, OI devices, and commands. */
     public RobotContainer() {
         primary = new CommandXboxController(Constants.PRIMARY_CONTROLLER_PORT);
@@ -39,8 +42,11 @@ public class RobotContainer {
         intakeLauncher = new IntakeLauncherSubsystem();
         feeder = new FeederSubsystem();
         drive = new Drivetrain();
-        configureBindings();
         vision = new VisionSubsystem();
+
+        autoAim = new AutoAim(drive, vision);
+
+        configureBindings();
     }
 
     /**
@@ -60,7 +66,7 @@ public class RobotContainer {
 
         primary.leftBumper().whileTrue(intakeLauncher.eject());
 
-        primary.rightBumper().whileTrue(new AutoAim(drive, vision));
+        primary.rightBumper().whileTrue(autoAim);
     }
 
     private Command intakeCommand() {

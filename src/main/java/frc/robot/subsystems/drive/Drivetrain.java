@@ -28,8 +28,10 @@ public class Drivetrain extends SubsystemBase {
 
         drive = new DifferentialDrive(leftLeader, rightLeader);
 
-        final SparkMaxConfig config = (SparkMaxConfig)
-                new SparkMaxConfig().voltageCompensation(12).smartCurrentLimit(DRIVE_MOTOR_CURRENT_LIMIT).idleMode(SparkBaseConfig.IdleMode.kBrake);
+        final SparkMaxConfig config = (SparkMaxConfig) new SparkMaxConfig()
+                .voltageCompensation(12)
+                .smartCurrentLimit(DRIVE_MOTOR_CURRENT_LIMIT)
+                .idleMode(SparkBaseConfig.IdleMode.kBrake);
 
         // they kept calling methods that just didn't exist this is awesome
         // config.follow(leftLeader);
