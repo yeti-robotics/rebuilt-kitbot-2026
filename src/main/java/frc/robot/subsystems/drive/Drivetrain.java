@@ -56,8 +56,4 @@ public class Drivetrain extends SubsystemBase {
     public void driveArcade(double xSpeed, double zRotation) {
         drive.arcadeDrive(xSpeed, zRotation);
     }
-
-    //public Command driveLeft() {
-        //return runEnd(() -> rightFollower.set(0.2), () -> rightFollower.set(0));
-    }
 }

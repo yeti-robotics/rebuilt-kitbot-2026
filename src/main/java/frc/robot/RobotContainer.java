@@ -67,8 +67,6 @@ public class RobotContainer {
         primary.leftBumper().whileTrue(intakeLauncher.eject());
 
         primary.rightBumper().whileTrue(autoAim);
-
-        //primary.a().whileTrue(drive.driveLeft());
     }
 
     private Command intakeCommand() {
