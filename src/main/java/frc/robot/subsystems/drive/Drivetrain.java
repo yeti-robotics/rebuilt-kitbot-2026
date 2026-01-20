@@ -34,9 +34,9 @@ public class Drivetrain extends SubsystemBase {
                 .idleMode(SparkBaseConfig.IdleMode.kBrake);
 
         // they kept calling methods that just didn't exist this is awesome
-        // config.follow(leftLeader);
+        config.follow(leftLeader);
         leftFollower.configure(config, ResetMode.kResetSafeParameters, PersistMode.kPersistParameters);
-        // config.follow(rightLeader);
+        config.follow(rightLeader);
         config.inverted(true);
         rightFollower.configure(config, ResetMode.kResetSafeParameters, PersistMode.kPersistParameters);
 
