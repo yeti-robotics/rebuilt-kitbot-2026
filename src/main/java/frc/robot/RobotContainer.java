@@ -70,7 +70,7 @@ public class RobotContainer {
     }
 
     private Command intakeCommand() {
-        return intakeLauncher.setVoltage(5).alongWith(feeder.setVoltage(-6));
+        return intakeLauncher.setVoltage(8).alongWith(feeder.setVoltage(-6));
     }
 
     private Command feedAndShootCommand() {
