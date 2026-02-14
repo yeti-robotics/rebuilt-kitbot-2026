@@ -10,7 +10,7 @@ public class IntakeSubsystem extends SubsystemBase {
 
     public IntakeSubsystem() {
         //        intakeRoller = new SparkMax(IntakeConfigs.intakeMotorID, SparkLowLevel.MotorType.kBrushless);
-        actuator = new Servo(8);
+        actuator = new Servo(9);
         //        intakeRoller.configure(
         //                IntakeConfigs.feederConfig, ResetMode.kResetSafeParameters, PersistMode.kPersistParameters);
     }
@@ -25,11 +25,9 @@ public class IntakeSubsystem extends SubsystemBase {
     //                });
     //    }
 
-    public Command set(double value) {
+    public Command setAngle(double value) {
         return run(() -> actuator.setAngle(value));
     }
+    // min and max values 45-135
 
-    public Command setTwo(double value) {
-        return run(() -> actuator.setAngle(value));
-    }
 }

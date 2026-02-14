@@ -9,7 +9,6 @@ import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
 import frc.robot.Commands.AutoAim;
-import frc.robot.Commands.Drive;
 import frc.robot.constants.Constants;
 import frc.robot.subsystems.drive.Drivetrain;
 import frc.robot.subsystems.intake.FeederSubsystem;
@@ -62,14 +61,13 @@ public class RobotContainer {
      * joysticks}.
      */
     private void configureBindings() {
-        drive.setDefaultCommand(new Drive(drive, primary));
+        //        drive.setDefaultCommand(new Drive(drive, primary));
 
         //        primary.leftTrigger().whileTrue(intakeLauncher.setVoltage(10));
         //        primary.leftBumper().whileTrue(intake.setVoltage(-12));
         //        primary.rightTrigger().whileTrue(shooter.launchShooter(10.6));
-        primary.a().whileTrue(intake.set(180));
-        primary.b().whileTrue(intake.setTwo(1));
-        primary.x().whileTrue(intake.set(360));
+        primary.y().onTrue(intake.setAngle(50));
+        primary.x().onTrue(intake.setAngle(100));
     }
 
     /**
