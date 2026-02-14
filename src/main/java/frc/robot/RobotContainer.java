@@ -13,6 +13,7 @@ import frc.robot.Commands.Drive;
 import frc.robot.constants.Constants;
 import frc.robot.subsystems.drive.Drivetrain;
 import frc.robot.subsystems.intake.FeederSubsystem;
+import frc.robot.subsystems.intake.IntakeSubsystem;
 import frc.robot.subsystems.shooter.IntakeLauncherSubsystem;
 import frc.robot.subsystems.vision.VisionSubsystem;
 
@@ -28,6 +29,7 @@ public class RobotContainer {
 
     // Subsystems
     private final IntakeLauncherSubsystem intakeLauncher;
+    private final IntakeSubsystem intake;
     private final FeederSubsystem feeder;
     private final Drivetrain drive;
     private final VisionSubsystem vision;
@@ -40,6 +42,7 @@ public class RobotContainer {
         primary = new CommandXboxController(Constants.PRIMARY_CONTROLLER_PORT);
 
         intakeLauncher = new IntakeLauncherSubsystem();
+        intake = new IntakeSubsystem();
         feeder = new FeederSubsystem();
         drive = new Drivetrain();
         vision = new VisionSubsystem();
@@ -61,20 +64,12 @@ public class RobotContainer {
     private void configureBindings() {
         drive.setDefaultCommand(new Drive(drive, primary));
 
-        primary.leftTrigger().whileTrue(intakeCommand());
-        primary.rightTrigger().whileTrue(feedAndShootCommand());
-
-        primary.leftBumper().whileTrue(intakeLauncher.eject());
-
-        primary.rightBumper().whileTrue(autoAim);
-    }
-
-    private Command intakeCommand() {
-        return intakeLauncher.setVoltage(8).alongWith(feeder.setVoltage(-6));
-    }
-
-    private Command feedAndShootCommand() {
-        return intakeLauncher.setVoltage(8).alongWith(feeder.setVoltage(7));
+        //        primary.leftTrigger().whileTrue(intakeLauncher.setVoltage(10));
+        //        primary.leftBumper().whileTrue(intake.setVoltage(-12));
+        //        primary.rightTrigger().whileTrue(shooter.launchShooter(10.6));
+        primary.a().whileTrue(intake.set(180));
+        primary.b().whileTrue(intake.setTwo(1));
+        primary.x().whileTrue(intake.set(360));
     }
 
     /**
